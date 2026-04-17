@@ -1,0 +1,8 @@
+[general]
+# Starts with the crop tool
+initial-tool = "crop"
+copy-command = "wl-copy -t image/png"
+actions-on-right-click = ["save-to-clipboard"]
+
+# Closes Satty immediately after copy/save
+early-exit = true

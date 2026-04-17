@@ -1,0 +1,44 @@
+# --- General ---
+# This stops that "empty line" from appearing every time you hit enter
+add_newline = false
+
+# A clean, single-line format with no leading spaces
+format = "$hostname$directory$git_branch$git_status$python$c$cmd_duration$character"
+
+[hostname]
+ssh_only = true # Only shows when you're SSH'd into a server
+format = "[$hostname](bold red) "
+
+[directory]
+style = "bold cyan"
+format = "[$path]($style) "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = "󰊢 "
+style = "bold purple"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "bold red"
+format = "([$all_status$ahead_behind]($style) )"
+
+[cmd_duration]
+min_time = 500
+style = "italic yellow"
+format = "took [$duration]($style) "
+
+[character]
+success_symbol = "[>](bold green) "
+error_symbol = "[>](bold red) "
+
+[python]
+symbol = " "
+style = "bold yellow"
+format = "via [$symbol]($style) "
+
+[c]
+symbol = " "
+style = "bold blue"
+format = "via [$symbol]($style) "

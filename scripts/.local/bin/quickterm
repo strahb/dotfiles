@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Unique AppID so it doesn't mess with my terminal's niri config
+APP_ID="QuickTerm"
+
+# Launch alacritty with custom AppID, adapt this to your preferred terminal
+alacritty --class "$APP_ID" &
+
+# Wait for the window and grab its Niri ID
+while true; do
+    WIN_ID=$(niri msg --json windows | jq -r ".[] | select(.app_id == \"$APP_ID\") | .id" | head -n 1)
+    [[ -n "$WIN_ID" ]] && break
+    sleep 0.05
+done
+
+# Listen to Niri's event stream. 
+# The moment the focused window ID is NOT the terminal's ID, it closes
+niri msg --json event-stream | jq --unbuffered -r 'select(.WindowFocusChanged) | .WindowFocusChanged.id' | while read -r focused_id; do
+    if [[ "$focused_id" != "$WIN_ID" ]]; then
+        niri msg action close-window --id "$WIN_ID"
+        exit 0
+    fi
+done
