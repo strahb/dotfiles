@@ -9,11 +9,12 @@ window-rule {
         offset x=0 y=0
         softness 10
         spread 2
-        color "{{primary}}AA"
+        // This is where Noctalia changes the  color value
+        color "{{colors.primary.default.hex}}AA"
     }
 }
 
 binds {
-   // Ephemeral Terminal (Refer to 398)
-   Super+X hotkey-overlay-title="Quick Ephemeral Terminal" {spawn-sh "~/.personalbin/quickterm";}
+    // Win+X for a quick ephemeral terminal
+   Super+X hotkey-overlay-title="Quick Ephemeral Terminal" {spawn-sh "~/.local/bin/quickterm";}
 }

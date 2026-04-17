@@ -1,6 +1,5 @@
 [config]
 
 [templates.quickterm]
-input_path = "./user-templates/quickterm.kdl.template"
-output_path = "../niri/quickterm.kdl"
-post_hook = "niri msg action reload-config && notify-send -a 'Noctalia' -i 'color-management' 'Theme Updated' 'QuickTerm shadow has been synced with Noctalia colors.'"
+input_path = "~/.config/noctalia/user-templates/quickterm.kdl.template"
+output_path = "~/.config/niri/quickterm.kdl"
