@@ -79,23 +79,13 @@
         "widgets": {
             "center": [
                 {
-                    "compactMode": true,
-                    "hideMode": "hidden",
-                    "hideWhenIdle": false,
-                    "id": "MediaMini",
-                    "maxWidth": 250,
-                    "panelShowAlbumArt": true,
-                    "scrollingMode": "hover",
-                    "showAlbumArt": true,
-                    "showArtistFirst": false,
-                    "showProgressRing": false,
-                    "showVisualizer": false,
-                    "textColor": "none",
-                    "useFixedWidth": false,
-                    "visualizerType": "wave"
+                    "id": "plugin:privacy-indicator"
                 },
                 {
-                    "id": "plugin:privacy-indicator"
+                    "id": "plugin:update-count"
+                },
+                {
+                    "id": "plugin:kde-connect"
                 },
                 {
                     "clockColor": "none",
@@ -105,15 +95,9 @@
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false
-                },
-                {
-                    "id": "plugin:update-count"
                 }
             ],
             "left": [
-                {
-                    "id": "plugin:kde-connect"
-                },
                 {
                     "compactMode": true,
                     "diskPath": "/",
@@ -156,6 +140,22 @@
                     "showBadge": false,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
+                },
+                {
+                    "compactMode": true,
+                    "hideMode": "hidden",
+                    "hideWhenIdle": false,
+                    "id": "MediaMini",
+                    "maxWidth": 250,
+                    "panelShowAlbumArt": true,
+                    "scrollingMode": "hover",
+                    "showAlbumArt": true,
+                    "showArtistFirst": false,
+                    "showProgressRing": false,
+                    "showVisualizer": false,
+                    "textColor": "none",
+                    "useFixedWidth": false,
+                    "visualizerType": "wave"
                 }
             ],
             "right": [
@@ -184,9 +184,6 @@
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
                     "textColor": "none"
-                },
-                {
-                    "id": "plugin:tailscale"
                 },
                 {
                     "displayMode": "onhover",
