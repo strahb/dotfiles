@@ -146,7 +146,7 @@
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
-                    "maxWidth": 250,
+                    "maxWidth": 500,
                     "panelShowAlbumArt": true,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
@@ -154,7 +154,7 @@
                     "showProgressRing": false,
                     "showVisualizer": false,
                     "textColor": "none",
-                    "useFixedWidth": false,
+                    "useFixedWidth": true,
                     "visualizerType": "wave"
                 }
             ],
