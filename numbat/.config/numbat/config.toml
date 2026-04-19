@@ -1,0 +1,11 @@
+intro-banner = "short"
+prompt = "+> "
+pretty-print = "always"
+color = "always"
+edit-mode = "emacs"
+
+[formatting]
+digit-separator = " "
+digit-grouping-threshold = 6
+significant-digits = 6
+datetime = "%Y-%m-%d %H:%M:%S"

@@ -5,6 +5,7 @@
         $HOME/bin
         /usr/local/bin
         $HOME/.local/bin
+        $HOME/.cargo/bin
         $path
     )
     export PATH
@@ -63,6 +64,7 @@
     alias end='cd ~'
     alias aria='aria2c'
     alias dots='cd $DOTS'
+    alias calc='numbat -e'
 
 # --- Tool Initializations ---
     [[ -f ~/.zoxide.zsh ]] && source ~/.zoxide.zsh
