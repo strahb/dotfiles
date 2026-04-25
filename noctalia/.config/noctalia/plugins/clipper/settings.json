@@ -3,11 +3,13 @@
   "pincardsEnabled": true,
   "notecardsEnabled": true,
   "showCloseButton": true,
-  "fullscreenMode": false,
-  "hidePanelBackground": false,
+  "fullscreenMode": true,
+  "hidePanelBackground": true,
   "autoPaste": true,
-  "autoPasteOnRightClick": false,
+  "autoPasteOnRightClick": true,
   "autoPasteDelay": 300,
+  "panelWidth": 1450,
+  "panelHeight": 0,
   "cardColors": {
     "Text": {
       "bg": "mOutline",

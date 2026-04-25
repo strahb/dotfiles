@@ -409,11 +409,12 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    // Program binds
+    // General binds
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn-sh "alacritty"; }
-    Mod+D hotkey-overlay-title="Launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+L hotkey-overlay-title="Lockscreen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    Mod+V hotkey-overlay-title="Clipboard" { spawn-sh "qs -c noctalia-shell ipc call plugin:clipper toggle"; }
+    Mod+D hotkey-overlay-title="App Launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+L hotkey-overlay-title="Lock the screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    Mod+V hotkey-overlay-title="Open Clipboard" { spawn-sh "qs -c noctalia-shell ipc call plugin:clipper toggle"; }
+    Mod+E hotkey-overlay-title="File Explorer" { spawn-sh "nautilus"; }
     Ctrl+Shift+Space hotkey-overlay-title="1Password Quick Access" { spawn-sh "1password --quick-access"; }
 
     // Screenshot bind
