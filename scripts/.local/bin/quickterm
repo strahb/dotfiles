@@ -4,7 +4,7 @@
 APP_ID="QuickTerm"
 
 # Launch alacritty with custom AppID, adapt this to your preferred terminal
-alacritty --class "$APP_ID" &
+kitty --app-id "$APP_ID" &
 
 # Wait for the window and grab its Niri ID
 while true; do

@@ -1,3 +1,4 @@
 {
-  "hideIfNoDeviceConnected": true
+  "hideIfNoDeviceConnected": true,
+  "mainDeviceId": "e40d14cc6b284258ad11fd35742f81ff"
 }

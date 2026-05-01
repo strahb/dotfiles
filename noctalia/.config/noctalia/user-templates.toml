@@ -3,3 +3,9 @@
 [templates.quickterm]
 input_path = "~/.config/noctalia/user-templates/quickterm.kdl.template"
 output_path = "~/.config/niri/quickterm.kdl"
+
+[templates.kitty-custom]
+input_path = "~/.config/noctalia/user-templates/kitty-custom.template"
+output_path = "~/.config/kitty/current-theme.conf"
+# Reload the config
+post_hook = "killall -USR1 kitty"

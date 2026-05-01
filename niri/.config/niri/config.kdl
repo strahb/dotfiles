@@ -410,7 +410,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // General binds
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn-sh "alacritty"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: Kitty" { spawn-sh "kitty"; }
     Mod+D hotkey-overlay-title="App Launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+L hotkey-overlay-title="Lock the screen" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+V hotkey-overlay-title="Open Clipboard" { spawn-sh "qs -c noctalia-shell ipc call plugin:clipper toggle"; }
