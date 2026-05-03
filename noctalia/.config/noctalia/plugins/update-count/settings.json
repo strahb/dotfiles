@@ -1,5 +1,5 @@
 {
-  "updateIntervalMinutes": 30,
+  "updateIntervalMinutes": 300,
   "updateTerminalCommand": "alacritty -e",
   "currentIconName": "progress-down",
   "hideOnZero": true,

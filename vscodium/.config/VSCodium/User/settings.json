@@ -4,9 +4,8 @@
     "editor.fontFamily": "'JetBrainsMono Nerd Font', 'monospace'",
     "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
     "editor.fontLigatures": true,
-    "window.menuBarVisibility": "compact",
-    "workbench.layoutControl.enabled": false,
     "git.autofetch": true,
     "git.confirmSync": false,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "workbench.layoutControl.enabled": false
 }

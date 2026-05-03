@@ -190,7 +190,7 @@
                     "followFocusedScreen": false,
                     "fontWeight": "bold",
                     "groupedBorderOpacity": 1,
-                    "hideUnoccupied": false,
+                    "hideUnoccupied": true,
                     "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "none",
@@ -253,6 +253,15 @@
                     "textColor": "none"
                 },
                 {
+                    "defaultSettings": {
+                        "autoMount": false,
+                        "fileBrowser": "yazi",
+                        "hideWhenEmpty": false,
+                        "iconColor": "none",
+                        "showBadge": false,
+                        "showNotifications": true,
+                        "terminalCommand": "kitty"
+                    },
                     "id": "plugin:usb-drive-manager"
                 },
                 {
