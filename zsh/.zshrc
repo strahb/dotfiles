@@ -65,6 +65,7 @@
     alias aria='aria2c'
     alias dots='cd $DOTS'
     alias calc='numbat -e'
+    alias ssh="kitten ssh"  # Turns out Kitten tries to be its own thing and that messes OpenSSH servers up
 
 # --- Tool Initializations ---
     [[ -f ~/.zoxide.zsh ]] && source ~/.zoxide.zsh
