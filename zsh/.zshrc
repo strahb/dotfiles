@@ -10,6 +10,9 @@
     )
     export PATH
 
+    # SSH Auth Socket
+    export SSH_AUTH_SOCK=~/.1password/agent.sock
+
 # --- History Configuration ---
     HISTFILE=~/.histfile
     HISTSIZE=5000
