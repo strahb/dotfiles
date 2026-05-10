@@ -1,20 +1,16 @@
 directory: ~/Music/LibraryFLAC
 library: ~/.config/beets/library.db
 pluginpath:
-  - ~/.config/beets/beetsplug
+    - ~/.config/beets/beetsplug
 
-import:
-    move: yes
-    write: yes
-    copy: no
-    resume: ask
-    incremental: yes
+# Global art settings (Applies to fetchart, embedart, and convert)
+art_filename: cover
 
 plugins: 
+    - musicbrainz
     - embedart
     - convert
     - spectralcheck
-    - musicbrainz
     - fetchart
     - scrub
     - replaygain
@@ -24,60 +20,35 @@ plugins:
     - lastgenre
     - edit
     - lastimport
+
+scrub:
+    auto: yes
+
+embedart:
+    auto: no             # !! This stops Beets from embedding art on import
+    remove_art_file: no  
+
+import:
+    move: yes
+    write: yes
+    copy: no
+    resume: ask
+    incremental: yes
+
 # Library naming convention
 paths:
-    # Use $d_folder with a conditional slash. Refer to item_fields
     default: $albumartist/$album%aunique{}/%if{$d_folder, $d_folder/}$p_track. $title
     singleton: Non-Album/$artist/$p_track. $title
     comp: Compilations/%if{$label, $label/}$album%aunique{}/%if{$d_folder, $d_folder/}$p_track. $title
 
-fetchart:
-    auto: yes             # Automatically fetch during import
-    sources: coverart *   # Prioritize MusicBrainz (Cover Art Archive)
-    copy_album_art: yes   # Ensure it saves the file as cover.jpg
-
-convert:
-    dest: ~/Downloads/sshfs/HiRes
-    embed: no
-    copy_album_art: yes
-    format: keep_lossless
-    formats:
-        keep_lossless:
-            command: ffmpeg -i $source -y -vn -c:a copy $dest
-            extension: flac
-
-lastfm:
-    user: Strobii
-    api_key: fb8f13d3002911cba5c6f313fcce82ee
-
-replaygain:
-    backend: ffmpeg
-    auto: yes
-  
-fetchart:
-    auto: yes
-    filename: cover.jpg  # This is the "standard" name
-    sources:
-            - filesystem
-            - coverart
-            - itunes
-            - amazon
-            - albumart
-    copy_to_dir: yes     # Ensures the image is moved to the album folder
-
-musicbrainz:
-    genres: yes      # <--- This is 'no' by default in Beets!
-    extra_tags: [year, label, catalogue_number] # Optional: fetch more data
-    ratelimit: 1.5
-
 item_fields:
-    # 2-digit padded track
-    p_track: u"%02i" % track
+    # 2-digit padded track (with failsafe for missing tags)
+    p_track: u"%02i" % (track or 0)
     
     # 2-digit padded disc folder, but only if it's a multi-disc album
     d_folder: |
-        if disctotal > 1:
-            return u"%02i" % disc
+        if disctotal and disctotal > 1:
+            return u"%02i" % (disc or 0)
         else:
             return u""
             
@@ -86,3 +57,32 @@ item_fields:
         if genres:
             return genres[0]
         return u"Unknown"
+
+fetchart:
+    auto: yes
+    sources:
+        - filesystem
+        - coverart
+        - itunes
+        - amazon
+        - albumart
+        - '*'
+    minwidth: 1000        
+    maxwidth: 2000        # (Optional) Downscales massive 5K images to save disk space
+    high_resolution: yes  # Forces iTunes to pull their hidden 4K covers instead of standard 600px ones
+
+embedart:
+    auto: yes
+    remove_art_file: no
+
+musicbrainz:
+    genres: yes
+    extra_tags: [year, label, catalogue_number]
+    ratelimit: 1.5
+
+lastfm:
+    user: Strobii
+
+replaygain:
+    backend: ffmpeg
+    auto: yes
