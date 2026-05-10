@@ -41,12 +41,14 @@
     zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 
 
     # Initialize completions
+    setopt extended_glob
+    fpath=(~/.zsh/completions $fpath) # Load completions path
     autoload -Uz compinit
     # Only regenerate the completion dump file once a day
     if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.m-1) ]]; then
-    compinit -C
+        compinit -C
     else
-    compinit
+        compinit
     fi
 
 # --- Aliases ---
